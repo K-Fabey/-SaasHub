@@ -1,6 +1,6 @@
 class Subscription < ApplicationRecord
   has_many :licences, dependent: :destroy
-  has_many :users, through: :licences, dependent: :destroy
+  has_many :users, through: :licences
   belongs_to :Company
 
   belongs_to :technical_onwer, class_name: "User"

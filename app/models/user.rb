@@ -21,5 +21,4 @@ class User < ApplicationRecord
   validates :joining_date, presence: true
   validates :status, presence: true, inclusion: { in: STATUS }
 
-
 end

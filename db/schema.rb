@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_23_201306) do
+ActiveRecord::Schema.define(version: 2022_03_23_223119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2022_03_23_201306) do
     t.bigint "company_id"
     t.bigint "technical_owner_id"
     t.bigint "functional_owner_id"
+    t.integer "purchased_licences"
     t.index ["company_id"], name: "index_subscriptions_on_company_id"
     t.index ["functional_owner_id"], name: "index_subscriptions_on_functional_owner_id"
     t.index ["technical_owner_id"], name: "index_subscriptions_on_technical_owner_id"
