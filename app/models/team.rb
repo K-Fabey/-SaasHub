@@ -1,5 +1,5 @@
 class Team < ApplicationRecord
-  belongs_to :Company
+  belongs_to :company
   belongs_to :team_leader, class_name: "User"
 
   has_many :users # no destroy dependencies between teams and users. When we delete a team, we shouldn't delete the users as well

@@ -27,7 +27,7 @@ puts "Destroying all the licences"
 Licence.destroy_all
 
 # Creating new companies
-
+puts "Creating Le wagon"
 le_wagon = Company.create!(
   name: "Le Wagon",
   address: "30 Villa Gaudelet",
@@ -36,37 +36,38 @@ le_wagon = Company.create!(
   siren: "794949917"
 )
 
-# Creating teams
-
-finance_team = Team.create!(
-  name: "Finance Team"
-)
-
 # Creating users
 
 Thomas = User.create!(
-  first_name: "Thomas",
-  last_name: "Martin",
-  email: "thomas.martin@lewagon.com",
-  job_title: "Finance manager",
-  status: "Active",
-  joining_date: Date.today,
-  Team: finance_team
+    first_name: "Thomas",
+    last_name: "Martin",
+    email: "thomas.martin@lewagon.com",
+    job_title: "Finance manager",
+    status: "Active",
+    joining_date: Date.today,
+    # team: finance_team
+  )
+
+  # Creating teams
+finance_team = Team.create!(
+  name: "Finance Team",
+  company: le_wagon
 )
+
 
 # creating subscriptions
 
-slack = Subscription.create!(
-  name: "Slack",
-  provider: "Slack inc",
-  price: 5,
-  periodicity: "Monthly",
-  subscription_date: Date.today,
-  renewal_date: Date.today + 365,
-  link: "slack.com",
-  payment_method: "Bank card",
-  purchased_licences: 10,
-  technical_onwer: Thomas,
-  functional_onwer: Thomas,
-  company: Le_wagon
-)
+# slack = Subscription.create!(
+#   name: "Slack",
+#   provider: "Slack inc",
+#   price: 5,
+#   periodicity: "Monthly",
+#   subscription_date: Date.today,
+#   renewal_date: Date.today + 365,
+#   link: "slack.com",
+#   payment_method: "Bank card",
+#   purchased_licences: 10,
+#   # technical_onwer: Thomas,
+#   # functional_onwer: Thomas,
+#   # company: Le_wagon
+# )
